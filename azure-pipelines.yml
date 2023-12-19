@@ -21,6 +21,7 @@ steps:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'Pay-As-You-Go (5beddca6-6c7a-426d-a704-8305f3fb07ab)'
     subscriptionId: '$(subscription)'
+    galleryname: '$(galleries_galleryimage_name)'
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(resourcegroup)'
     location: '$(location)'
