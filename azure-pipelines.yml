@@ -27,6 +27,7 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'ARM Template for Image/Galleryimagename.json'
     csmParametersFile: 'ARM Template for Image/parametersgallery.json'
+    overrideParameters: '-galleries_galleryimage_name $(Image)'
     deploymentMode: 'Incremental'
 
 - task: AzureResourceManagerTemplateDeployment@3
