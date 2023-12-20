@@ -41,4 +41,5 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'ARM Template for Image/Linuxtemplate.json'
     csmParametersFile: 'ARM Template for Image/Linuxparameters.json'
+    overrideParameters: '-galleryName $(Image)'
     deploymentMode: 'Incremental'
