@@ -26,6 +26,6 @@ steps:
     resourceGroupName: '$(resourcegroup)'
     location: '$(location)'
     templateLocation: 'Linked artifact'
-    csmFile: 'ARM Template for Image /Linuxtemplate.json'
-    csmParametersFile: 'ARM Template for Image /Linuxparameters.json'
+    csmFile: 'ARM Template for Image/Linuxtemplate.json'
+    csmParametersFile: 'ARM Template for Image/Linuxparameters.json'
     deploymentMode: 'Incremental'
