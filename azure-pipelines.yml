@@ -19,13 +19,25 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Pay-As-You-Go (5beddca6-6c7a-426d-a704-8305f3fb07ab)'
+    azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
     subscriptionId: '$(subscription)'
-    galleryname: '$(galleries_galleryimage_name)'
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(resourcegroup)'
     location: '$(location)'
     templateLocation: 'Linked artifact'
     csmFile: 'ARM Template for Image/Galleryimagename.json'
     csmParametersFile: 'ARM Template for Image/parametersgallery.json'
+    deploymentMode: 'Incremental'
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    subscriptionId: '$(subscription)'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(resourcegroup)'
+    location: '$(location)'
+    templateLocation: 'Linked artifact'
+    csmFile: 'ARM Template for Image /Linuxtemplate.json'
+    csmParametersFile: 'ARM Template for Image /Linuxparameters.json'
     deploymentMode: 'Incremental'
