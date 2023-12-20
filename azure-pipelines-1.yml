@@ -13,7 +13,7 @@ variables:
 - group: imagebuilder
 
 steps:
-#- checkout: self
+- checkout: self
 
 
 
