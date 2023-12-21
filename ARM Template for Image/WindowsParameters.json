@@ -21,7 +21,7 @@
         {
             "type": "Microsoft.Compute/galleries/images",
             "apiVersion": "2022-03-03",
-            "name": "[concat(parameters('galleries_galleryimage_name'), '/img1')]",
+            "name": "[concat(parameters('galleries_galleryimage_name'), '/WindowsImage')]",
             "location": "uksouth",
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/galleries', parameters('galleries_galleryimage_name'))]"
