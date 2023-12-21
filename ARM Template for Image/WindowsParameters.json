@@ -27,7 +27,7 @@
                 "[resourceId('Microsoft.Compute/galleries', parameters('galleries_galleryimage_name'))]"
             ],
             "properties": {
-                "hyperVGeneration": "V1",
+                "hyperVGeneration": "V2",
                 "architecture": "x64",
                 "osType": "Windows",
                 "osState": "Generalized",
