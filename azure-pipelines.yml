@@ -21,8 +21,14 @@ steps:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
     subscriptionId: '$(subscription)'
-    action: 'DeleteRG'
+    action: 'Create Or Update Resource Group'
     resourceGroupName: '$(resourcegroup)'
+    location: '$(location)'
+    templateLocation: 'Linked artifact'
+    csmFile: 'WindowsTemplate.json'
+    csmParametersFile: 'WindowsParameters.json'
+    overrideParameters: '-galleryName $(Image)'
+    deploymentMode: 'Incremental'
 
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
