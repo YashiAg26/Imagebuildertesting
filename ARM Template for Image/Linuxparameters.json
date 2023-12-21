@@ -9,7 +9,7 @@
             "value": "galleryimage"
         },
         "imageDefinitionName": {
-            "value": "LinuxImage"
+            "value": "Linux_image_defination_version"
         },
         "osType": {
             "value": "Linux"
@@ -18,13 +18,13 @@
             "value": "Generalized"
         },
         "publisher": {
-            "value": "Linux"
+            "value": "Redhat"
         },
         "offer": {
-            "value": "offer2"
+            "value": "Rhel-20190605"
         },
         "sku": {
-            "value": "skuimage2"
+            "value": "9_2"
         },
         "minRecommendedvCPUs": {
             "value": 1
@@ -39,7 +39,7 @@
             "value": 32
         },
         "hyperVGeneration": {
-            "value": "V1"
+            "value": "V2"
         },
         "architecture": {
             "value": "x64"
