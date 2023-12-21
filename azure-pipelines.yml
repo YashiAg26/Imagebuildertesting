@@ -25,8 +25,8 @@ steps:
     resourceGroupName: '$(resourcegroup)'
     location: '$(location)'
     templateLocation: 'Linked artifact'
-    csmFile: 'WindowsTemplate.json'
-    csmParametersFile: 'WindowsParameters.json'
+    csmFile: 'ARM Template for Image/WindowsTemplate.json'
+    csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
     overrideParameters: '-galleryName $(Image)'
     deploymentMode: 'Incremental'
 
