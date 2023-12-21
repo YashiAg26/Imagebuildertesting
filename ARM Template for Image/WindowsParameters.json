@@ -13,7 +13,7 @@
             "type": "Microsoft.Compute/galleries",
             "apiVersion": "2022-03-03",
             "name": "[parameters('galleries_galleryimage_name')]",
-            "location": "eastus",
+            "location": "uksouth",
             "properties": {
                 "identifier": {}
             }
@@ -22,7 +22,7 @@
             "type": "Microsoft.Compute/galleries/images",
             "apiVersion": "2022-03-03",
             "name": "[concat(parameters('galleries_galleryimage_name'), '/img1')]",
-            "location": "eastus",
+            "location": "uksouth",
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/galleries', parameters('galleries_galleryimage_name'))]"
             ],
