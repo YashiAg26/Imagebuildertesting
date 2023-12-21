@@ -21,7 +21,7 @@
         {
             "type": "Microsoft.Compute/galleries/images",
             "apiVersion": "2022-03-03",
-            "name": "[concat(parameters('galleries_galleryimage_name'), '/WindowsImage')]",
+            "name": "[concat(parameters('galleries_galleryimage_name'), '/Windows_image_defination_version')]",
             "location": "UK South",
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/galleries', parameters('galleries_galleryimage_name'))]"
@@ -32,9 +32,9 @@
                 "osType": "Windows",
                 "osState": "Generalized",
                 "identifier": {
-                    "publisher": "windows",
-                    "offer": "offer1",
-                    "sku": "skuimge1"
+                    "publisher": "MicrosoftWindowsServer",
+                    "offer": "windowsserver",
+                    "sku": "2016-datacenter-ARM"
                 },
                 "recommended": {
                     "vCPUs": {
