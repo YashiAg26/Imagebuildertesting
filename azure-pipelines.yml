@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -43,3 +44,24 @@ steps:
     csmParametersFile: 'ARM Template for Image/Linuxparameters.json'
     overrideParameters: '-galleryName $(Image)'
     deploymentMode: 'Incremental'
+
+- task: AzureImageBuilderTask@1
+  inputs:
+    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+    imageSource: 'marketplace'
+    baseImage: 'MicrosoftWindowsServer:WindowsServer:2019-Datacenter'
+    provisioner: 'powershell'
+    windowsUpdateProvisioner: true
+    runElevated: true
+    runAsSystem: true
+    packagePath: '$(System.DefaultWorkingDirectory)/_YashiAg26_olderImagebuild/webapp'
+    inlineScript: |
+      & 'c:\buildArtifacts\webapp\webConfig.ps1'
+      & 'c:\buildArtifacts\webapp\Server2019v2.0.0\cis.ps1'
+    storageAccountName: 'linuxstoragem'
+    distributeType: 'sig'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/Windows_image_defination_version'
+    replicationRegions: 'uksouth'
+    ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    ibAzureResourceGroup: 'test'
+    ibLocation: 'uksouth'
