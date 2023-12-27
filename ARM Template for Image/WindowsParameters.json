@@ -6,10 +6,10 @@
             "defaultValue": "galleryimage",
             "type": "String"
         },
-		"imagedefinition": {
-		    "defaultValue": "Windows_image_defination_version",
+	"imagedefinition": {
+	    "defaultValue": "Windows_image_defination_version",
             "type": "String"
-		}
+	}
     },
     "variables": {},
     "resources": [
@@ -25,7 +25,7 @@
         {
             "type": "Microsoft.Compute/galleries/images",
             "apiVersion": "2022-03-03",
-            "name": "[concat(parameters('galleries_galleryimage_name'), '/(parameters('imagedefinition')')]",
+            "name": "[concat(parameters('galleries_galleryimage_name'), '/', parameters('imagedefinition'))]",
             "location": "UK South",
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/galleries', parameters('galleries_galleryimage_name'))]"
