@@ -28,6 +28,6 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'ARM Template for Image/WindowsTemplate.json'
     csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
-    overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef)'
+    overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef2019) -sku($sku)'
     deploymentMode: 'Incremental'
 
