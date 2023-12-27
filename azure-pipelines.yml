@@ -46,7 +46,7 @@ steps:
       & 'c:\buildArtifacts\webapp\Server2019v2.0.0\cis.ps1'
     storageAccountName: 'linuxstoragem'
     distributeType: 'sig'
-    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/Windows_image_defination_version'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/Windows_2019_image_defination_version'
     replicationRegions: 'uksouth'
     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
     ibAzureResourceGroup: 'test'
