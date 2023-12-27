@@ -4,28 +4,28 @@
 # https://aka.ms/yaml
 
 trigger:
--
+- none
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+- group: imagebuilder
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+steps:
+#- checkout: self
+
+
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'anugrah pay as you go(1)(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-    subscriptionId: 'cbf8b966-9488-4fc7-a133-b65c3b0285a8'
+    azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    subscriptionId: '$(subscription)'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'test'
-    location: 'UK South'
+    resourceGroupName: '$(resourcegroup)'
+    location: '$(location)'
     templateLocation: 'Linked artifact'
-    csmFile: 'ARM Template for Image/Galleryimagename.json'
-    csmParametersFile: 'ARM Template for Image/parametersgallery.json'
+    csmFile: 'ARM Template for Image/WindowsTemplate.json'
+    csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
+    overrideParameters: '-galleries_galleryimage_name $(Image) , -imagedefinition $(imgdef)'
     deploymentMode: 'Incremental'
