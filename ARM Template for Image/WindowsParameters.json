@@ -6,10 +6,23 @@
             "defaultValue": "galleryimage",
             "type": "String"
         },
-	"imagedefinition": {
-	    "defaultValue": "Windows_image_defination_version",
+	    "imagedefinition": {
+	        "defaultValue": "Windows_image_defination_version",
             "type": "String"
-	}
+	    },
+		"publisher": {
+	        "defaultValue": "MicrosoftWindowsServer",
+            "type": "String"
+	    },
+		"offer": {
+	        "defaultValue": "windowsserver",
+            "type": "String"
+	    },
+		"sku": {
+	        "defaultValue": "2016-datacenter-ARM",
+            "type": "String"
+	    }
+		
     },
     "variables": {},
     "resources": [
@@ -36,9 +49,9 @@
                 "osType": "Windows",
                 "osState": "Generalized",
                 "identifier": {
-                    "publisher": "MicrosoftWindowsServer",
-                    "offer": "windowsserver",
-                    "sku": "2016-datacenter-ARM"
+                    "publisher": "[parameters('publisher')]",
+                    "offer": "[parameters('offer')]",
+                    "sku": "[parameters('sku')]"
                 },
                 "recommended": {
                     "vCPUs": {
