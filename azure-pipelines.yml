@@ -66,3 +66,18 @@ steps:
     csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
     overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef2016) -sku $(sku2016)'
     deploymentMode: 'Incremental'
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    subscriptionId: '$(subscription)'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(resourcegroup)'
+    location: '$(location)'
+    templateLocation: 'Linked artifact'
+    csmFile: 'ARM Template for Image/WindowsTemplate.json'
+    csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
+    overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef2022) -sku $(sku2022)'
+    deploymentMode: 'Incremental'
+
