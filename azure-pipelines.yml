@@ -31,27 +31,27 @@ steps:
     overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef2019) -sku $(sku2019)'
     deploymentMode: 'Incremental'
 
-# - task: AzureImageBuilderTask@1
-#   inputs:
-#     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
-#     imageSource: 'marketplace'
-#     baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:2019-datacenter-smalldisk-g2'
-#     provisioner: 'powershell'
-#     windowsUpdateProvisioner: true
-#     runElevated: true
-#     runAsSystem: true
-#     packagePath: '$(System.DefaultWorkingDirectory)/_YashiAg26_olderImagebuild/webapp'
-#     inlineScript: |
-#       & 'c:\buildArtifacts\webapp\webConfig.ps1'
-#       & 'c:\buildArtifacts\webapp\Server2019v2.0.0\cis.ps1'
-#     storageAccountName: 'linuxstoragem'
-#     distributeType: 'sig'
-#     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/Windows_2019_image_defination_version'
-#     replicationRegions: 'uksouth'
-#     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-#     ibAzureResourceGroup: 'test'
-#     ibLocation: 'uksouth'
-#     vmSize: 'Standard_DS3_v2'
+- task: AzureImageBuilderTask@1
+  inputs:
+    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+    imageSource: 'marketplace'
+    baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:2019-datacenter-smalldisk-g2'
+    provisioner: 'powershell'
+    windowsUpdateProvisioner: true
+    runElevated: true
+    runAsSystem: true
+    packagePath: '$(System.DefaultWorkingDirectory)/_YashiAg26_olderImagebuild/webapp'
+    inlineScript: |
+      & 'c:\buildArtifacts\webapp\webConfig.ps1'
+      & 'c:\buildArtifacts\webapp\Server2019v2.0.0\cis.ps1'
+    storageAccountName: 'linuxstoragem'
+    distributeType: 'sig'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/Windows_2019_image_defination_version'
+    replicationRegions: 'uksouth'
+    ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    ibAzureResourceGroup: 'test'
+    ibLocation: 'uksouth'
+    vmSize: 'Standard_DS3_v2'
   
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
@@ -80,4 +80,46 @@ steps:
     csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
     overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef2022) -sku $(sku2022)'
     deploymentMode: 'Incremental'
+- task: AzureImageBuilderTask@1
+  inputs:
+    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+    imageSource: 'marketplace'
+    baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:2016-datacenter-smalldisk-g2'
+    provisioner: 'powershell'
+    windowsUpdateProvisioner: true
+    runElevated: true
+    runAsSystem: true
+    packagePath: '$(System.DefaultWorkingDirectory)/_YashiAg26_olderImagebuild/webapp'
+    inlineScript: |
+      & 'c:\buildArtifacts\webapp\webConfig.ps1'
+      & 'c:\buildArtifacts\webapp\Server2019v2.0.0\cis.ps1'
+    storageAccountName: 'linuxstoragem'
+    distributeType: 'sig'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/Windows_2016_image_defination_version'
+    replicationRegions: 'uksouth'
+    ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    ibAzureResourceGroup: 'test'
+    ibLocation: 'uksouth'
+    vmSize: 'Standard_DS3_v2'
 
+- task: AzureImageBuilderTask@1
+  inputs:
+    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+    imageSource: 'marketplace'
+    baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:2022-datacenter-smalldisk-g2'
+    provisioner: 'powershell'
+    windowsUpdateProvisioner: true
+    runElevated: true
+    runAsSystem: true
+    packagePath: '$(System.DefaultWorkingDirectory)/_YashiAg26_olderImagebuild/webapp'
+    inlineScript: |
+      & 'c:\buildArtifacts\webapp\webConfig.ps1'
+      & 'c:\buildArtifacts\webapp\Server2019v2.0.0\cis.ps1'
+    storageAccountName: 'linuxstoragem'
+    distributeType: 'sig'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/Windows_2022_image_defination_version'
+    replicationRegions: 'uksouth'
+    ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    ibAzureResourceGroup: 'test'
+    ibLocation: 'uksouth'
+    vmSize: 'Standard_DS3_v2'
