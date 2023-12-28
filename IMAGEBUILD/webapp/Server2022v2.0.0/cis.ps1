@@ -1,0 +1,1 @@
+cmd.exe /c C:\Server2022v2.0.0\cis.bat
