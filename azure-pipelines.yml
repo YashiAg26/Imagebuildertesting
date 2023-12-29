@@ -53,19 +53,19 @@ steps:
 #     ibLocation: 'uksouth'
 #     vmSize: 'Standard_DS3_v2'
   
-# - task: AzureResourceManagerTemplateDeployment@3
-#   inputs:
-#     deploymentScope: 'Resource Group'
-#     azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-#     subscriptionId: '$(subscription)'
-#     action: 'Create Or Update Resource Group'
-#     resourceGroupName: '$(resourcegroup)'
-#     location: '$(location)'
-#     templateLocation: 'Linked artifact'
-#     csmFile: 'ARM Template for Image/WindowsTemplate.json'
-#     csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
-#     overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef2016) -sku $(sku2016)'
-#     deploymentMode: 'Incremental'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    subscriptionId: '$(subscription)'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(resourcegroup)'
+    location: '$(location)'
+    templateLocation: 'Linked artifact'
+    csmFile: 'ARM Template for Image/WindowsTemplate.json'
+    csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
+    overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef) -sku $(sku)'
+    deploymentMode: 'Incremental'
 
 # # - task: AzureResourceManagerTemplateDeployment@3
 # #   inputs:
@@ -103,21 +103,42 @@ steps:
 #     ibLocation: 'uksouth'
 #     vmSize: 'Standard_DS3_v2'
 
+# - task: AzureImageBuilderTask@1
+#   inputs:
+#     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+#     imageSource: 'marketplace'
+#     baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku2022)'
+#     provisioner: 'powershell'
+#     windowsUpdateProvisioner: true
+#     runElevated: true
+#     runAsSystem: true
+#     packagePath: '$(System.DefaultWorkingDirectory)/_YashiAg26_olderImagebuild/webapp'
+#     inlineScript: |
+#       & 'c:\buildArtifacts\webapp\$(cs2022)\cis.ps1'
+#     storageAccountName: 'linuxstoragem'
+#     distributeType: 'sig'
+#     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/$(imgdef2022)'
+#     replicationRegions: 'uksouth'
+#     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+#     ibAzureResourceGroup: 'test'
+#     ibLocation: 'uksouth'
+#     vmSize: 'Standard_DS3_v2'
+
 - task: AzureImageBuilderTask@1
   inputs:
     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
     imageSource: 'marketplace'
-    baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku2022)'
+    baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku)'
     provisioner: 'powershell'
     windowsUpdateProvisioner: true
     runElevated: true
     runAsSystem: true
     packagePath: '$(System.DefaultWorkingDirectory)/_YashiAg26_olderImagebuild/webapp'
     inlineScript: |
-      & 'c:\buildArtifacts\webapp\$(cs2022)\cis.ps1'
+      & 'c:\buildArtifacts\webapp\$(filename)\cis.ps1'
     storageAccountName: 'linuxstoragem'
     distributeType: 'sig'
-    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/$(imgdef2022)'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/shared_image_gallery/images/$(imgdef)'
     replicationRegions: 'uksouth'
     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
     ibAzureResourceGroup: 'test'
