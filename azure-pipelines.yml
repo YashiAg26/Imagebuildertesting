@@ -11,7 +11,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- group: imagebuilder
+- group: imagebuilder2016
 
 steps:
 #- checkout: self
