@@ -21,10 +21,10 @@
             "value": "Redhat"
         },
         "offer": {
-            "value": "Rhel-20190605"
+            "value": "rhel_test_offers"
         },
         "sku": {
-            "value": "9_2"
+            "value": "9_2_sap_ha_gen2"
         },
         "minRecommendedvCPUs": {
             "value": 1
