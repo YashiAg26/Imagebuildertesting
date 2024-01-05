@@ -21,10 +21,10 @@
             "value": "Redhat"
         },
         "offer": {
-            "value": "rhel_test_offers"
+            "value": "RHEL"
         },
         "sku": {
-            "value": "9_2_sap_ha_gen2"
+            "value": "9-lvm-gen2"
         },
         "minRecommendedvCPUs": {
             "value": 1
