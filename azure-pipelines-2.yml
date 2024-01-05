@@ -11,7 +11,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- group: imagebuilder2019
+- group: imagebuilder2022
 
 steps:
 
