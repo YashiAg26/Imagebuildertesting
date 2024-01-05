@@ -48,7 +48,7 @@ steps:
   inputs:
     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
     imageSource: 'marketplace'
-    baseImagePubOfferSku: 'Redhat:Rhel-20190605:$(sku)'
+    baseImagePubOfferSku: 'Redhat:RHEL:$(sku)'
     provisioner: 'powershell'
     windowsUpdateProvisioner: true
     runElevated: true
