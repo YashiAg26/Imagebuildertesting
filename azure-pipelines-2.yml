@@ -11,7 +11,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- group: imagebuilder_Ubuntu
+- group: imagebuilder_Ubuntu_20_04
 
 steps:
 
