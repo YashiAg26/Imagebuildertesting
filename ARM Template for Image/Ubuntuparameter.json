@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "UK South"
+        },
+        "galleryName": {
+            "value": "galleryimage"
+        },
+        "imageDefinitionName": {
+            "value": "Linux_image_defination_version"
+        },
+        "osType": {
+            "value": "Linux"
+        },
+        "osState": {
+            "value": "Generalized"
+        },
+        "publisher": {
+            "value": "Redhat"
+        },
+        "offer": {
+            "value": "RHEL"
+        },
+        "sku": {
+            "value": "9-lvm-gen2"
+        },
+        "minRecommendedvCPUs": {
+            "value": 1
+        },
+        "maxRecommendedvCPUs": {
+            "value": 16
+        },
+        "minRecommendedMemory": {
+            "value": 1
+        },
+        "maxRecommendedMemory": {
+            "value": 32
+        },
+        "hyperVGeneration": {
+            "value": "V2"
+        },
+        "architecture": {
+            "value": "x64"
+        }
+    }
+}
