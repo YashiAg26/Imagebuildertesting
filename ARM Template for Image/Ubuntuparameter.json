@@ -21,10 +21,10 @@
             "value": "canonical"
         },
         "offer": {
-            "value": "0001-com-ubuntu-minimal-jammy"
+            "value": "0001-com-ubuntu-server-jammy"
         },
         "sku": {
-            "value": "minimal-22_04-lts-gen2"
+            "value": "22_04-lts-gen2"
         },
         "minRecommendedvCPUs": {
             "value": 1
