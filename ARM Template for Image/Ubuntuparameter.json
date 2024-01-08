@@ -18,13 +18,13 @@
             "value": "Generalized"
         },
         "publisher": {
-            "value": "Redhat"
+            "value": "canonical"
         },
         "offer": {
-            "value": "RHEL"
+            "value": "0001-com-ubuntu-minimal-jammy"
         },
         "sku": {
-            "value": "9-lvm-gen2"
+            "value": "minimal-22_04-lts-gen2"
         },
         "minRecommendedvCPUs": {
             "value": 1
