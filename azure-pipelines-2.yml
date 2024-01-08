@@ -16,37 +16,37 @@ variables:
 steps:
 
   
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-    subscriptionId: '$(subscription)'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: '$(resourcegroup)'
-    location: '$(location)'
-    templateLocation: 'Linked artifact'
-    csmFile: 'ARM Template for Image/WindowsTemplate.json'
-    csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
-    overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef) -sku $(sku)'
-    deploymentMode: 'Incremental'
+# - task: AzureResourceManagerTemplateDeployment@3
+#   inputs:
+#     deploymentScope: 'Resource Group'
+#     azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+#     subscriptionId: '$(subscription)'
+#     action: 'Create Or Update Resource Group'
+#     resourceGroupName: '$(resourcegroup)'
+#     location: '$(location)'
+#     templateLocation: 'Linked artifact'
+#     csmFile: 'ARM Template for Image/WindowsTemplate.json'
+#     csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
+#     overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef) -sku $(sku)'
+#     deploymentMode: 'Incremental'
 
-- task: AzureImageBuilderTask@1
-  inputs:
-    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
-    imageSource: 'marketplace'
-    baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku)'
-    provisioner: 'powershell'
-    windowsUpdateProvisioner: true
-    runElevated: true
-    runAsSystem: true
-    storageAccountName: 'linuxstoragem'
-    distributeType: 'sig'
-    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
-    replicationRegions: 'uksouth'
-    ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-    ibAzureResourceGroup: 'test'
-    ibLocation: 'uksouth'
-    vmSize: 'Standard_DS3_v2'
+# - task: AzureImageBuilderTask@1
+#   inputs:
+#     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+#     imageSource: 'marketplace'
+#     baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku)'
+#     provisioner: 'powershell'
+#     windowsUpdateProvisioner: true
+#     runElevated: true
+#     runAsSystem: true
+#     storageAccountName: 'linuxstoragem'
+#     distributeType: 'sig'
+#     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
+#     replicationRegions: 'uksouth'
+#     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+#     ibAzureResourceGroup: 'test'
+#     ibLocation: 'uksouth'
+#     vmSize: 'Standard_DS3_v2'
 
 # - task: AzureResourceManagerTemplateDeployment@3
 #   inputs:
@@ -76,30 +76,30 @@ steps:
 #     ibLocation: 'uksouth'
 #     vmSize: 'Standard_DS3_v2'
 
-# - task: AzureResourceManagerTemplateDeployment@3
-#   inputs:
-#     deploymentScope: 'Resource Group'
-#     azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-#     subscriptionId: '$(subscription)'
-#     action: 'Create Or Update Resource Group'
-#     resourceGroupName: '$(resourcegroup)'
-#     location: '$(location)'
-#     templateLocation: 'Linked artifact'
-#     csmFile: 'ARM Template for Image/Ubuntutemplate.json'
-#     csmParametersFile: 'ARM Template for Image/Ubuntuparameter.json'
-#     overrideParameters: '-galleryName $(Image) -imageDefinitionName $(imgdef) -sku $(sku)'
-#     deploymentMode: 'Incremental'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    subscriptionId: '$(subscription)'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(resourcegroup)'
+    location: '$(location)'
+    templateLocation: 'Linked artifact'
+    csmFile: 'ARM Template for Image/Ubuntutemplate.json'
+    csmParametersFile: 'ARM Template for Image/Ubuntuparameter.json'
+    overrideParameters: '-galleryName $(Image) -imageDefinitionName $(imgdef) -sku $(sku)'
+    deploymentMode: 'Incremental'
 
-# - task: AzureImageBuilderTask@1
-#   inputs:
-#     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
-#     imageSource: 'marketplace'
-#     baseImagePubOfferSku: 'canonical:0001-com-ubuntu-server-focal:$(sku)'
-#     storageAccountName: 'linuxstoragem'
-#     distributeType: 'sig'
-#     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
-#     replicationRegions: 'uksouth'
-#     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-#     ibAzureResourceGroup: 'test'
-#     ibLocation: 'uksouth'
-#     vmSize: 'Standard_DS3_v2'
+- task: AzureImageBuilderTask@1
+  inputs:
+    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+    imageSource: 'marketplace'
+    baseImagePubOfferSku: 'canonical:0001-com-ubuntu-server-jammy:$(sku)'
+    storageAccountName: 'linuxstoragem'
+    distributeType: 'sig'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
+    replicationRegions: 'uksouth'
+    ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+    ibAzureResourceGroup: 'test'
+    ibLocation: 'uksouth'
+    vmSize: 'Standard_DS3_v2'
