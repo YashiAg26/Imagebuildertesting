@@ -11,7 +11,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- group: imagebuilder2022
+- group: imagebuilder2016_GEN2
 
 steps:
 
