@@ -35,6 +35,10 @@ steps:
     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
     imageSource: 'marketplace'
     baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku)'
+    provisioner: 'powershell'
+    windowsUpdateProvisioner: true
+    runElevated: true
+    runAsSystem: true
     storageAccountName: 'linuxstoragem'
     distributeType: 'sig'
     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
