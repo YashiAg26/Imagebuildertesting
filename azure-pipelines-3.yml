@@ -10,6 +10,9 @@ trigger:
 pool:
   vmImage: windows-latest
 
+variables:
+   -group: firewall
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -21,7 +24,7 @@ steps:
 
 - task: PowerShellOnTargetMachines@3
   inputs:
-    Machines: 'test1'
-    UserName: 'YashiAgrawal'
-    UserPassword: 'YashiAgrawal@1999'
+    Machines: '172.167.21.12'
+    UserName: 'Domain\YashiAgrawal'
+    UserPassword: '$(passwordVariable)'
     InlineScript: 'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False'
