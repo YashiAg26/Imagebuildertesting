@@ -28,3 +28,4 @@ steps:
     UserName: 'Domain\YashiAgrawal'
     UserPassword: '$(passwordVariable)'
     InlineScript: 'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False'
+    NewPsSessionOptionArguments: '$PSSessionOption = New-PSSessionOption -OpenTimeOut 120000'
