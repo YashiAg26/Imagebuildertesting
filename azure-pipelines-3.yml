@@ -24,4 +24,4 @@ steps:
     Machines: '172.167.21.12'
     UserName: 'YashiAgrawal'
     UserPassword: 'YashiAgrawal@1999'
-    InlineScript: 'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True'
+    InlineScript: 'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False'
