@@ -24,7 +24,8 @@ steps:
 
 - task: PowerShellOnTargetMachines@3
   inputs:
-    Machines: 'test1'
+    Machines: '172.167.21.12:3389'
     UserName: 'YashiAgrawal'
     UserPassword: '$(passwordVariable)'
     InlineScript: 'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True'
+    CommunicationProtocol: 'Http'
