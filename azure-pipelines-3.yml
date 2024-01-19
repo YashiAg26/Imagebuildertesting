@@ -28,4 +28,3 @@ steps:
     UserName: 'YashiAgrawal'
     UserPassword: '$(passwordVariable)'
     InlineScript: 'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True'
-    CommunicationProtocol: 'Http'
