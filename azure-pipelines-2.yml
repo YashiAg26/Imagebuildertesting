@@ -9,7 +9,8 @@ trigger:
 
 pool:
   name: Default
-  demands: redhatnew, Agent.Version -gtVersion 2.195.1
+  demands: redhatnew
+          -equal 2.195.1
 
 variables:
 - group: imagebuilder_redhat
