@@ -12,43 +12,11 @@ pool:
   demands: Agent.Version -equals 2.195.1
 
 variables:
-- group: imagebuilder_redhat
+- group: imagebuilder2016_GEN2
 
 steps:
 
   
-# - task: AzureResourceManagerTemplateDeployment@3
-#   inputs:
-#     deploymentScope: 'Resource Group'
-#     azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-#     subscriptionId: '$(subscription)'
-#     action: 'Create Or Update Resource Group'
-#     resourceGroupName: '$(resourcegroup)'
-#     location: '$(location)'
-#     templateLocation: 'Linked artifact'
-#     csmFile: 'ARM Template for Image/WindowsTemplate.json'
-#     csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
-#     overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef) -sku $(sku)'
-#     deploymentMode: 'Incremental'
-
-# - task: AzureImageBuilderTask@1
-#   inputs:
-#     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
-#     imageSource: 'marketplace'
-#     baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku)'
-#     provisioner: 'powershell'
-#     windowsUpdateProvisioner: true
-#     runElevated: true
-#     runAsSystem: true
-#     storageAccountName: 'linuxstoragem'
-#     distributeType: 'sig'
-#     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
-#     replicationRegions: 'uksouth'
-#     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
-#     ibAzureResourceGroup: 'test'
-#     ibLocation: 'uksouth'
-#     vmSize: 'Standard_DS3_v2'
-
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -58,16 +26,20 @@ steps:
     resourceGroupName: '$(resourcegroup)'
     location: '$(location)'
     templateLocation: 'Linked artifact'
-    csmFile: 'ARM Template for Image/Linuxtemplate.json'
-    csmParametersFile: 'ARM Template for Image/Linuxparameters.json'
-    overrideParameters: '-galleryName $(Image) -imageDefinitionName $(imgdef) -sku $(sku)'
+    csmFile: 'ARM Template for Image/WindowsTemplate.json'
+    csmParametersFile: 'ARM Template for Image/WindowsParameters.json'
+    overrideParameters: '-galleries_galleryimage_name $(Image) -imagedefinition $(imgdef) -sku $(sku)'
     deploymentMode: 'Incremental'
 
 - task: AzureImageBuilderTask@1
   inputs:
     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
     imageSource: 'marketplace'
-    baseImagePubOfferSku: 'Redhat:RHEL:$(sku)'
+    baseImagePubOfferSku: 'MicrosoftWindowsServer:WindowsServer:$(sku)'
+    provisioner: 'powershell'
+    windowsUpdateProvisioner: true
+    runElevated: true
+    runAsSystem: true
     storageAccountName: 'teststgnew'
     distributeType: 'sig'
     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
@@ -76,6 +48,34 @@ steps:
     ibAzureResourceGroup: 'test'
     ibLocation: 'uksouth'
     vmSize: 'Standard_DS3_v2'
+
+# - task: AzureResourceManagerTemplateDeployment@3
+#   inputs:
+#     deploymentScope: 'Resource Group'
+#     azureResourceManagerConnection: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+#     subscriptionId: '$(subscription)'
+#     action: 'Create Or Update Resource Group'
+#     resourceGroupName: '$(resourcegroup)'
+#     location: '$(location)'
+#     templateLocation: 'Linked artifact'
+#     csmFile: 'ARM Template for Image/Linuxtemplate.json'
+#     csmParametersFile: 'ARM Template for Image/Linuxparameters.json'
+#     overrideParameters: '-galleryName $(Image) -imageDefinitionName $(imgdef) -sku $(sku)'
+#     deploymentMode: 'Incremental'
+
+# - task: AzureImageBuilderTask@1
+#   inputs:
+#     managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+#     imageSource: 'marketplace'
+#     baseImagePubOfferSku: 'Redhat:RHEL:$(sku)'
+#     storageAccountName: 'teststgnew'
+#     distributeType: 'sig'
+#     galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
+#     replicationRegions: 'uksouth'
+#     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
+#     ibAzureResourceGroup: 'test'
+#     ibLocation: 'uksouth'
+#     vmSize: 'Standard_DS3_v2'
 
 # - task: AzureResourceManagerTemplateDeployment@3
 #   inputs:
