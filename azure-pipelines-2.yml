@@ -9,7 +9,7 @@ trigger:
 
 pool:
   name: Default
-  demands: redhatnew # exists check for SpecialSoftware
+  demands: redhatnew
 
 variables:
 - group: imagebuilder_redhat
