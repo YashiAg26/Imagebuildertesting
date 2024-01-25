@@ -8,7 +8,7 @@ trigger:
 - none
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: redhatnew
 
 variables:
 - group: imagebuilder_redhat
