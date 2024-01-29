@@ -8,7 +8,7 @@ trigger:
 - none
 
 pool:
-  ubuntu-latest
+  vmImage: ubuntu-latest
   # name: Default
   # demands: Agent.Version -equals 2.195.1
 
