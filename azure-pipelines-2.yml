@@ -93,12 +93,12 @@ steps:
 
 - task: AzureImageBuilderTask@1
   inputs:
-    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
+    managedIdentity: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/aibtestrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aib'
     imageSource: 'marketplace'
     baseImagePubOfferSku: 'canonical:0001-com-ubuntu-server-focal:$(sku)'
     storageAccountName: 'storageaib1'
     distributeType: 'sig'
-    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/test/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
+    galleryImageId: '/subscriptions/cbf8b966-9488-4fc7-a133-b65c3b0285a8/resourceGroups/aibtestrg/providers/Microsoft.Compute/galleries/$(Image)/images/$(imgdef)'
     replicationRegions: 'uksouth'
     ibSubscription: 'anugrah pay as you go(cbf8b966-9488-4fc7-a133-b65c3b0285a8)'
     ibAzureResourceGroup: 'test'
