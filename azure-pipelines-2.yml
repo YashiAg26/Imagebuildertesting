@@ -8,8 +8,9 @@ trigger:
 - none
 
 pool:
-  name: Default
-  demands: Agent.Version -equals 2.195.1
+  ubuntu-latest
+  # name: Default
+  # demands: Agent.Version -equals 2.195.1
 
 variables:
 - group: imagebuilder_Ubuntu_20_04
